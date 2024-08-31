@@ -49,12 +49,12 @@ ifeq ($(CONFIG_ARCH_PARROT), y)
 include $(CAMERA_KERNEL_ROOT)/config/parrot.mk
 endif
 
-# For some targets which have binary compatible gki kernel with another one,
-# we cannot rely on CONFIG_ARCH_* symbol which is defined in Kernel defconfig
-ifeq ($(BOARD_PLATFORM), kalama)
+ifeq ($(CONFIG_ARCH_KALAMA), y)
 include $(CAMERA_KERNEL_ROOT)/config/kalama.mk
 endif
 
+# For some targets which have binary compatible gki kernel with another one,
+# we cannot rely on CONFIG_ARCH_* symbol which is defined in Kernel defconfig
 ifeq ($(BOARD_PLATFORM), crow)
 include $(CAMERA_KERNEL_ROOT)/config/crow.mk
 endif
